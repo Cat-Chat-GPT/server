@@ -25,7 +25,6 @@ public class MemoryDialogueRepositoryTest {
 
         Dialogue dialogue1 = new Dialogue();
         Long id = Long.valueOf(1);
-        dialogue1.setOwnedById(id);
         dialogue1.setText("hello");
 
         //when
@@ -42,15 +41,12 @@ public class MemoryDialogueRepositoryTest {
         // given
         Dialogue dialogue1 = new Dialogue();
         Long id = Long.valueOf(1);
-        dialogue1.setOwnedById(id);
         dialogue1.setText("hello");
 
         Dialogue dialogue2 = new Dialogue();
-        dialogue2.setOwnedById(id);
         dialogue2.setText("hello2");
 
         Dialogue dialogue3 = new Dialogue();
-        dialogue3.setOwnedById(id);
         dialogue3.setText("hello3");
 
         memoryDialogueRepository.save(dialogue1, id);
