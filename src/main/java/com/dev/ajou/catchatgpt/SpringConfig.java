@@ -1,6 +1,6 @@
 package com.dev.ajou.catchatgpt;
 
-import com.dev.ajou.catchatgpt.repository.DialogueMemoryRepository;
+import com.dev.ajou.catchatgpt.repository.MemoryDialogueRepository;
 import com.dev.ajou.catchatgpt.repository.DialogueRepository;
 import com.dev.ajou.catchatgpt.service.DialogueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +16,5 @@ public class SpringConfig {
     public DialogueService dialogueService() { return new DialogueService(dialogueRepository()); }
 
     @Bean
-    public DialogueRepository dialogueRepository() { return new DialogueMemoryRepository();}
+    public DialogueRepository dialogueRepository() { return new MemoryDialogueRepository();}
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DialogueRepository {
-    Dialogue save(Dialogue dialogue);
+    Dialogue save(Dialogue dialogue, Long id);
 
-    List<Dialogue> findAll();
+    List<Dialogue> findById(Long id);
 }
