@@ -1,9 +1,10 @@
 package com.dev.ajou.catchatgpt.controller;
 
 import com.dev.ajou.catchatgpt.service.DialogueService;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class DialogueController {
     private final DialogueService dialogueService;
 
@@ -12,5 +13,10 @@ public class DialogueController {
     }
 
 
+    @GetMapping("/test")
+    public String testMethod() {
+
+        return "ddd";
+    }
 
 }
