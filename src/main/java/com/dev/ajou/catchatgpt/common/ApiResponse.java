@@ -1,7 +1,5 @@
-package com.dev.ajou.catchatgpt.controller;
+package com.dev.ajou.catchatgpt.common;
 
-
-import com.dev.ajou.catchatgpt.common.ErrorCode;
 
 public class ApiResponse<T> {
     public ApiResponse(String code, String message, T data) {
