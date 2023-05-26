@@ -1,5 +1,6 @@
 package com.dev.ajou.catchatgpt.controller;
 
+import com.dev.ajou.catchatgpt.common.ApiResponse;
 import com.dev.ajou.catchatgpt.service.DialogueService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +15,10 @@ public class DialogueController {
 
 
     @GetMapping("/test")
-    public String testMethod() {
+    public ApiResponse<String> testMethod() {
 
-        return "ddd";
+        String testString = "TEST_STRING";
+        return ApiResponse.success(testString);
     }
 
 }

@@ -24,4 +24,16 @@ public class ApiResponse<T> {
     public static ApiResponse<Object> error(ErrorCode errorCode, String message) {
         return new ApiResponse<>(errorCode.getCode(), message, null);
     }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public T getData() {
+        return data;
+    }
 }
