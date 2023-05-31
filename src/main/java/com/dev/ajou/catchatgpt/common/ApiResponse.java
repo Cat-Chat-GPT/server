@@ -16,7 +16,7 @@ public class ApiResponse<T> {
     private T data;
 
     public static <T> ApiResponse<T> success(T data) {
-        return new ApiResponse<>("", "", data);
+        return new ApiResponse<>("200", "성공", data);
     }
     public static ApiResponse<Object> error(ErrorCode errorCode) {
         return new ApiResponse<>(errorCode.getCode(), errorCode.getMessage(), null);

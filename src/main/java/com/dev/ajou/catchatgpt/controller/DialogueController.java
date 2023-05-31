@@ -32,7 +32,6 @@ public class DialogueController {
         message.setContent(request.getText());
         String answer = gptService.callGPT(message);
 
-
         Dialogue dialogue = new Dialogue();
         dialogue.setText(request.getText());
         dialogueService.chatWithAnimal(dialogue, Long.valueOf(1));
@@ -40,6 +39,8 @@ public class DialogueController {
         DialogueResponse response = new DialogueResponse();
 
         response.setAnswer(answer);
+
+
 
         return ApiResponse.success(response);
     }

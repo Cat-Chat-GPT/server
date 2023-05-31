@@ -20,7 +20,7 @@ public class SpringConfig {
     public GPTService gptService() {
         return new GPTService(
                 "https://api.openai.com/v1/chat/completions",
-                "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"
+                "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"
         );
     }
 
