@@ -14,7 +14,7 @@ public class SpringConfig {
     public SpringConfig() { }
 
     @Bean
-    public DialogueService dialogueService() { return new DialogueService(dialogueRepository()); }
+    public DialogueService dialogueService() { return new DialogueService(dialogueRepository(), gptService()); }
 
     @Bean
     public GPTService gptService() {

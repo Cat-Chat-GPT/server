@@ -15,30 +15,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DialogueController {
     private final DialogueService dialogueService;
-    private final GPTService gptService;
 
-    public DialogueController(DialogueService dialogueService, GPTService gptService) {
+    public DialogueController(DialogueService dialogueService) {
 
         this.dialogueService = dialogueService;
-        this.gptService = gptService;
     }
 
     @PostMapping("/chat")
     public ApiResponse<DialogueResponse> chatWithAnimal(@RequestBody DialogueRequest request) {
 
 
-        Message message = new Message();
-        message.setRole("user");
-        message.setContent(request.getText());
-        String answer = gptService.callGPT(message);
+//        Message message = new Message();
+//        message.setRole("user");
+//        message.setContent(request.getText());
+//        String answer = gptService.callGPT(message);
 
         Dialogue dialogue = new Dialogue();
         dialogue.setText(request.getText());
-        dialogueService.chatWithAnimal(dialogue, Long.valueOf(1));
+        dialogueService.chatWithAnimal(dialogue, request.getId());
 
         DialogueResponse response = new DialogueResponse();
 
-        response.setAnswer(answer);
+//        response.setAnswer(answer);
+
 
 
 

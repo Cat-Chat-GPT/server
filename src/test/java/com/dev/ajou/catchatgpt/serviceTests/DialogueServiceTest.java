@@ -4,6 +4,7 @@ package com.dev.ajou.catchatgpt.serviceTests;
 import com.dev.ajou.catchatgpt.domain.Dialogue;
 import com.dev.ajou.catchatgpt.repository.MemoryDialogueRepository;
 import com.dev.ajou.catchatgpt.service.DialogueService;
+import com.dev.ajou.catchatgpt.service.GPTService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,12 +16,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DialogueServiceTest {
     DialogueService service;
+    GPTService gptService;
     MemoryDialogueRepository repository;
 
     @BeforeEach
     public void beforeEach() {
         repository = new MemoryDialogueRepository();
-        service = new DialogueService(repository);
+        service = new DialogueService(repository, gptService);
     }
     @AfterEach
     public void afterEach() {
